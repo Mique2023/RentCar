@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 2fr 4fr 2fr;
     background: linear-gradient(150deg, black 30%, rgb(53, 74, 94));
+    transition: all linear .3s;
 }
 
 
@@ -110,6 +111,11 @@
    
 }
 
+.Caja_Salir{
+    display: none;
+    cursor: pointer;
+}
+
 
 @keyframes btns1{
     100%{
@@ -121,4 +127,45 @@
     100%{
         transform: translateY(27px);
     }
+}
+
+@media screen and (max-width: 1150px){
+    .Contenedor-Header{
+        position: fixed;
+        z-index: 99;
+        width: 320px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: space-between;
+        padding: 25px;
+    }
+
+    .Menu{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .close{
+        transform: translateX(-320px);
+    }
+
+    .Caja_Salir{
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
+        border-radius: 100vmax;
+        border: 2px solid #d4d0d0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }
