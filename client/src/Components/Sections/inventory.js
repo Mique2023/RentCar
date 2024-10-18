@@ -1,38 +1,91 @@
-import image from "../../Images/thumb-1920-1357717.jpeg"
+import image from "../../Images/CarroKi.jpeg"
+import image2 from "../../Images/CarroToyota.jpg"
+import image3 from "../../Images/CarroHonda.jpg"
 import Toyota from "../../Images/Toyota.png"
 import Honda from "../../Images/Honda.png"
-import Ford from "../../Images/Ford.png"
 import Kia from "../../Images/Kia.png"
-import "../../Css/Slide.css"
+import video from "../../Videos/a.mp4"
+
+import {useContext, useState} from "react"
+import { VehiculosToyota } from "../../Layouts/VehiculosToyota" 
+import { VehiculosHonda } from "../../Layouts/VehiculosHonda" 
+import { VehiculosKia } from "../../Layouts/VehiculosKia" 
+
+import "../../Css/Inventory.css"
+import { MenuContext } from "../../App/App"
 
 export function Inventory(){
+
+    const [AbrirMenu, setAbrirMenu, setApagarMenu] = useContext(MenuContext)
+
+    const objInvetarios = {
+        VehiculosKia: VehiculosKia,
+        VehiculosToyota: VehiculosToyota,
+        VehiculosHonda: VehiculosHonda
+    }
+
+    const [Catalogo, setCatalogo] = useState("Home_Inventario")
+
+    const InvenatioActual = objInvetarios[Catalogo];
+
     return(
-        <div>
-            <div className="Body-Slide">
-                <div className="Titulo">
-                    <h1>AutoFlex</h1>
-                    <h1>Rental</h1>
+        <>
+        
+            {
+                Catalogo == "Home_Inventario" ?
+                <div className="Contenedor_Inventario" id="Inventory">
+                    <video autoPlay loop muted>
+                            <source src={video} type="video/mp4"/>
+                    </video>
+
+                    <div className="Contenedor_Inventory">
+                        <div>
+                            <div className="Titulo_Inventario">
+                                <h1>¡Elije tu marca</h1>
+                                <h3 className="Borde-Letra">Y Vehiculo favotiro</h3>
+                                <h5>Para tus paseos!</h5>
+                                <div>
+                                <h2 className="Borde-Letra2">Disfruta de Auto<span>Flex</span></h2>
+                                </div>
+                            </div>
+                            <button className="All_Vehiculos">Ver todos los vehiculos</button>
+                        </div>
+                    <div className="Marcas_Populares">
+                            <h1 className="Titulo_Marcas">Marcas populares</h1>
+                        <div className="Contenedor_Marcas">
+                            <div className="s" onClick={() => {setCatalogo("VehiculosKia"); setApagarMenu(true)}}>
+                                <div className="t">
+                                    <img className="image1" src={image} alt="" />
+                                </div>
+                                <div className="o">
+                                    <img src={Kia} alt="" />
+                                </div>
+                            </div>
+                            <div className="s" onClick={() => {setCatalogo("VehiculosToyota"); setApagarMenu(true)}}>
+                                <div className="t">
+                                    <img className="image2" src={image2} alt="" />
+                                </div>
+                                <div className="o">
+                                    <img src={Toyota} alt="" />
+                                </div>
+                            </div>
+                            <div className="s" onClick={() => {setCatalogo("VehiculosHonda"); setApagarMenu(true)}}>
+                                <div className="t">
+                                    <img className="image3" src={image3} alt="" />
+                                </div>
+                                <div className="o">
+                                    <img src={Honda} alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
-                <br />
-                <div className="Info">
-                    <p>Encuentra el vehículo perfecto para tus necesidades con nuestro servicio de alquiler. Desde autos compactos hasta SUV de lujo, ofrecemos una amplia variedad de marcas y modelos para que tu experiencia sea cómoda y segura. Ya sea que necesites un auto para un viaje de negocios, unas vacaciones familiares o simplemente moverte por la ciudad, tenemos la solución ideal para ti. ¡Reserva hoy y empieza a disfrutar de la libertad de conducir sin complicaciones!</p>
                 </div>
-                <div className="Cajas">
-                    <div className="Caja_1">
-                        <img src={Toyota} alt="" />
-                    </div>
-                    <div className="Caja_1">
-                        <img src={Honda} alt="" />
-                    </div>
-                    <div className="Caja_1">
-                        <img src={Ford} alt="" />
-                    </div>
-                    <div className="Caja_1">
-                        <img src={Kia} alt="" />
-                    </div>
-                </div>
-            </div>
-            <img className="Back-Image" src={image} alt="" />
-        </div>
+            :
+            <InvenatioActual fuction={setCatalogo}/>
+            }
+        
+        </>
     );
 }

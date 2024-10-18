@@ -1,6 +1,9 @@
 
 .Contenedor_Slide{
     position: relative;
+    overflow-x: hidden;
+    position: relative;
+    top: 130px;
 }
 
 
@@ -103,6 +106,7 @@
     z-index: 100;
     cursor: pointer;
 }
+
 
 
 @media screen and (max-width: 1035px){

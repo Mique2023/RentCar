@@ -5,8 +5,11 @@
     height: auto;
     display: grid;
     grid-template-columns: 2fr 4fr 2fr;
-    background: linear-gradient(150deg, black 30%, rgb(53, 74, 94));
+    background: linear-gradient(150deg, rgba(0, 0, 0, 0.2) 30%, transparent);
     transition: all linear .3s;
+    position: fixed;
+    top: 0;
+    z-index: 99;
 }
 
 
@@ -14,7 +17,7 @@
 .Contenedor-Header .Logo{
     width: 100%;
     height: auto;
-    background: black;
+    background: transparent;
     color: #fff;
     padding: 25px;
     text-align: center;

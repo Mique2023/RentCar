@@ -1,0 +1,185 @@
+.Contenedor_Catalogo{
+    width: 100%;
+    height: 100vh;
+ 
+    overflow: hidden;
+    position: relative;
+}
+
+.Contenedor_Catalogo img{
+    width: 100%;
+    z-index: 1;
+    animation: Animar2 .5s linear;
+}
+
+.Header-Vehicluos{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-rows: 0.8fr 7fr;
+    
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+  transform: translateY(50vh);
+    
+}
+
+.Header .Btn-Atras{
+    margin-left: 20px;
+}
+.Header .Btn-Atras button{
+    cursor: pointer;
+    background: rgba(255, 0, 0, 0.4);
+    width: 50px;
+    height: 50px;
+    border-radius: 100vmax;
+    border: none;
+    color: #ffffff;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Vehiculos-Informacion{
+   
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 2fr 2fr;
+}
+
+.Informacion-General-Vehiculo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: Animar .5s linear;
+}
+
+.Caja-General{
+    width: 60%;
+    height: 70%;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+}
+
+.Contenedor-Izquierda{
+
+   
+}
+
+.Btn-TipoVehiculo{
+
+    gap: 25px;
+    background: #fff;
+    display: flex;
+    float: left;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    justify-content: left;
+    align-items: center;
+}
+
+.Filtro-Autos{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+    width: 85%;
+}
+
+.Filtro-Autos input{
+    padding: 15px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    background: #fff;
+    outline: none;
+}
+.Filtro-Autos button{
+    position: relative;
+    padding: 15px;
+    border: none;
+    background: #fff;
+    border-radius: 0px 5px 5px 0px;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.Btn-TipoVehiculo .Active{
+    width: 100%;
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.Cajas-Vehiculos{
+    width: 100%;
+    height: 600px;
+    display: grid;
+    justify-content: right;
+    align-items: center;
+    grid-template-columns: repeat(3, 3fr);
+}
+
+.Caja{
+    width: 150px;
+    height: 250px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    animation: Animar .5s linear;
+}
+
+.Caja .Foto-Auto{
+    background: rgba(255, 255, 255, 0.4);
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Caja div{
+    background: rgba(255, 255, 255, 0.4);
+    margin: 5px;
+    border-radius: 5px;
+    
+}
+
+.Caja div h3{
+    text-align: left;
+}
+.Caja div span{
+    text-align: left;
+}
+
+.Caja div img{
+    width: 100px;
+}
+
+@keyframes Animar{
+    0%{
+        transform: scale(0.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes Animar2{
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
