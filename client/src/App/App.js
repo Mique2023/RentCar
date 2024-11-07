@@ -1,6 +1,9 @@
 
 import { Header } from '../Components/Header';
+import { Contacto } from '../Components/Sections/Contacto';
 import { Inventory } from '../Components/Sections/inventory';
+import { Reservations } from '../Components/Sections/Reservations';
+import { Services } from '../Components/Sections/Services';
 import { Slide } from '../Components/Slide/Slide';
 import '../Css/App.css';
 
@@ -16,7 +19,7 @@ function App() {
   return (
    <MenuContext.Provider value={[AbrirMenu, setAbrirMenu, setApagarMenu]}>
      <div className="App">
-        <div className="Header-App">
+        <div className="Header-App" id='Home'>
           {
             ApagarMenu != true ?
             <Header/>
@@ -27,6 +30,9 @@ function App() {
         </div>
         <div className="Body-App">
           <Inventory/>
+          <Reservations/>
+          <Services/>
+          <Contacto/>
         </div>
     </div>
    </MenuContext.Provider>

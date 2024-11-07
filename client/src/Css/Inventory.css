@@ -1,6 +1,6 @@
 .Contenedor_Inventario{
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     --background: red;
     position: relative;
     overflow: hidden;
